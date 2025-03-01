@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "ScalaCoreModule"
 include ':app'
+include ':core'
