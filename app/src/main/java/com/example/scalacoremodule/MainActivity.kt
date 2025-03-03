@@ -27,6 +27,7 @@ import com.example.core.Description
 import com.example.core.Foo
 import com.example.scalacoremodule.ui.theme.ScalaCoreModuleTheme
 import java.util.Optional
+import java.util.concurrent.Executors
 
 class MainActivity : ComponentActivity() {
 
@@ -47,6 +48,7 @@ fun Form() {
     var repo by remember { mutableStateOf("") }
     var error by remember { mutableStateOf("") }
     var proj: Optional<Description> by remember { mutableStateOf(Optional.empty()) }
+    val exc = Executors.newSingleThreadExecutor()
 
 
     Surface(
@@ -63,7 +65,16 @@ fun Form() {
             Text("Repository")
             OutlinedTextField(value = repo, onValueChange = { repo = it })
             Button(onClick = {
-                Foo.getProjectInfo(org, repo).fold({ error = it }, {})
+                exc.execute({
+                    try {
+                        Foo.getProjectInfo(org, repo).fold({ println(it) }, {
+                            proj = Optional.of(it)
+                        })
+                    } catch (e: Exception) {
+                        println(e.message)
+                        println(e.printStackTrace())
+                    }
+                })
             }) { Text("Look up on Scaladex") }
             ProjectDescription(proj)
 
