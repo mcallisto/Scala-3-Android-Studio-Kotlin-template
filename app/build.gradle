@@ -38,6 +38,7 @@ android {
 
 dependencies {
 
+    implementation libs.scala3.library.x
     implementation project(":core")
     implementation libs.androidx.core.ktx
     implementation libs.androidx.lifecycle.runtime.ktx

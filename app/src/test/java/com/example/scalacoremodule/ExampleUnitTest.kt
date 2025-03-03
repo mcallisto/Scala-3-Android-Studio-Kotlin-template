@@ -20,4 +20,9 @@ class ExampleUnitTest {
     fun scala_core_isUsable() {
         assertEquals(42, Foo.bar())
     }
+
+    @Test
+    fun scala_either() {
+        assertEquals(42, Foo.either().toOption().get())
+    }
 }
