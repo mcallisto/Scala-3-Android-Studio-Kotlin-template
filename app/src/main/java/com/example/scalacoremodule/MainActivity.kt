@@ -90,7 +90,7 @@ fun ProjectDescription(desc: Optional<Description>) {
         var proj = desc.get()
         Column {
             Text(proj.description())
-            Text(proj.stars().toString())
+            Text("Stars: " + proj.stars().toString())
         }
     }
 }
