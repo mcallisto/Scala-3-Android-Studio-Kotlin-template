@@ -17,6 +17,8 @@ object Foo:
   import sttp.client4.*
   import sttp.client4.upicklejson.*
 
+  val x = Seq(Option(25), Option(-30), Option(100)).find(_.isDefined).flatten
+
   val bar: Int = (1 to 11).toList.sum
 
   def getProjectInfo(org: String, repo: String): Either[String, Description] =

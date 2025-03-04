@@ -44,8 +44,8 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Form() {
-    var org by remember { mutableStateOf("") }
-    var repo by remember { mutableStateOf("") }
+    var org by remember { mutableStateOf("indoorvivants") }
+    var repo by remember { mutableStateOf("sn-bindgen") }
     var error by remember { mutableStateOf("") }
     var proj: Optional<Description> by remember { mutableStateOf(Optional.empty()) }
     val exc = Executors.newSingleThreadExecutor()
