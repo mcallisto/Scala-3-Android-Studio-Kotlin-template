@@ -2,8 +2,6 @@ package com.example.core
 
 import sttp.client4.upicklejson.default.asJson
 
-import scala.util.Try
-
 case class Description(
                         description: String,
                         stars: Int,
@@ -21,7 +19,6 @@ object Foo:
   val backend = OkHttpSyncBackend()
 
   import sttp.client4.*
-  import sttp.client4.upicklejson.*
 
   def getProjectInfo(org: String, repo: String): Either[String, Description] =
     basicRequest
