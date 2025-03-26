@@ -27,3 +27,11 @@ The emitted Scala code is more compatible with Android ART.
 Since currently all Scala libraries are not yet published to Maven Central with this version,
 the workaround is to let Android R8 minify the code,
 so `minifyEnabled true` must be set even for `debug` builds.
+
+### What about a Java-only template?
+
+Android Studio is currently quite opinionated towards Kotlin,
+so a Java module is not an option you get straight from the `New` > `New Project…` menu.
+
+If you want the same project starting from the Java-only template,
+please check https://github.com/mcallisto/Scala-3-Android-Studio-Java-template.
