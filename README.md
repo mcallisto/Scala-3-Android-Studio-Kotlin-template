@@ -16,11 +16,11 @@ Helping the adoption of Scala in Android Studio.
 
 This is the project you get if:
 
-1. in **Android Studio** Android Studio _Meerkat | 2024.3.1 Patch 2_ you choose from menu:
+1. in **Android Studio** _Meerkat Feature Drop | 2024.3.2_ you choose from menu:
 
     `New` > `New Project…` > `Empty Activity` (template for Phone and Tablet)
 
-2. you then add a minimal Scala 3.7.0-RC2 module named `core` and call it from the `app` module
+2. you then add a minimal Scala 3.7.0 module named `core` and call it from the `app` module
 
 3. you use [STTP](https://github.com/softwaremill/sttp) to query [ScalaDex](https://index.scala-lang.org/)
 and display the results. Credits and big thanks for this to [@keynmol](https://github.com/keynmol)
